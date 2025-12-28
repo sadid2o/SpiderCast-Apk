@@ -29,6 +29,12 @@ class VideoPlayerActivity : AppCompatActivity() {
     }
 
     private fun initializePlayer(streamUrl: String) {
+        if (streamUrl.isEmpty()) {
+            // Show error and finish activity if stream URL is empty
+            finish()
+            return
+        }
+        
         player = ExoPlayer.Builder(this).build().also { exoPlayer ->
             playerView.player = exoPlayer
 
@@ -40,11 +46,6 @@ class VideoPlayerActivity : AppCompatActivity() {
             exoPlayer.prepare()
             exoPlayer.playWhenReady = true
         }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        releasePlayer()
     }
 
     override fun onDestroy() {

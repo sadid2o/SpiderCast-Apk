@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">test-streams.mux.dev</domain>
+        <domain includeSubdomains="true">demo.unified-streaming.com</domain>
+        <domain includeSubdomains="true">bitdash-a.akamaihd.net</domain>
+        <domain includeSubdomains="true">devstreaming-cdn.apple.com</domain>
+        <domain includeSubdomains="true">voa-lh.akamaihd.net</domain>
+    </domain-config>
+</network-security-config>
